@@ -1,0 +1,95 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store - Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .login-box {
+            width: 350px;
+            margin: 100px auto;
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <h2>Online Book Store</h2>
+        <h3>Login</h3>
+
+        <form onsubmit="return loginUser()">
+
+            <input type="text" id="username"
+                   placeholder="Enter Username">
+
+            <input type="password" id="password"
+                   placeholder="Enter Password">
+
+            <button type="submit">Login</button>
+
+            <p id="message"></p>
+
+        </form>
+    </div>
+
+    <script>
+        function loginUser() {
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var message = document.getElementById("message");
+
+            if (username == "" || password == "") {
+                message.innerHTML = "Please enter username and password.";
+                return false;
+            }
+
+            message.style.color = "green";
+            message.innerHTML = "Login successful!";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
+```
