@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store - Catalogue</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .catalogue {
+            width: 85%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ddd;
+        }
+
+        button {
+            padding: 7px 12px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Featured Book Section */
+
+        .featured {
+            background-color: white;
+            border: 1px solid #ccc;
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .featured img {
+            width: 180px;
+            height: 230px;
+            object-fit: cover;
+            margin: 10px;
+        }
+
+        .featured p {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Online Book Store</h1>
+        <p>Book Catalogue</p>
+    </header>
+
+    <div class="catalogue">
+
+        <h2>Available Books</h2>
+
+        <table>
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Availability</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>Wings of Fire</td>
+                <td>A. P. J. Abdul Kalam</td>
+                <td>Biography</td>
+                <td>₹250</td>
+                <td>Available</td>
+                <td><button onclick="addBook()">Add to Cart</button></td>
+            </tr>
+
+            <tr>
+                <td>The Alchemist</td>
+                <td>Paulo Coelho</td>
+                <td>Fiction</td>
+                <td>₹300</td>
+                <td>Available</td>
+                <td><button onclick="addBook()">Add to Cart</button></td>
+            </tr>
+
+            <tr>
+                <td>Rich Dad Poor Dad</td>
+                <td>Robert Kiyosaki</td>
+                <td>Finance</td>
+                <td>₹350</td>
+                <td>Available</td>
+                <td><button onclick="addBook()">Add to Cart</button></td>
+            </tr>
+
+            <tr>
+                <td>Atomic Habits</td>
+                <td>James Clear</td>
+                <td>Self Help</td>
+                <td>₹450</td>
+                <td>Available</td>
+                <td><button onclick="addBook()">Add to Cart</button></td>
+            </tr>
+
+            <tr>
+                <td>Harry Potter</td>
+                <td>J. K. Rowling</td>
+                <td>Fantasy</td>
+                <td>₹400</td>
+                <td>Available</td>
+                <td><button onclick="addBook()">Add to Cart</button></td>
+            </tr>
+
+            <tr>
+                <td>Basic Science</td>
+                <td>R. Kumar</td>
+                <td>Education</td>
+                <td>₹350</td>
+                <td>Available</td>
+                <td><button onclick="addBook()">Add to Cart</button></td>
+            </tr>
+
+            <tr>
+                <td>Introduction to Programming</td>
+                <td>John Smith</td>
+                <td>Computer</td>
+                <td>₹500</td>
+                <td>Available</td>
+                <td><button onclick="addBook()">Add to Cart</button></td>
+            </tr>
+        </table>
+    <script>
+        function addBook() {
+            alert("Book added to cart!");
+        }
+    </script>
+
+</body>
+</html> 
