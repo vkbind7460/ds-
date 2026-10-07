@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email and Phone Validation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 350px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px gray;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Registration Form</h2>
+
+        <form onsubmit="return validateForm()">
+
+            <!-- Email -->
+            <label>Email:</label>
+            <input type="text" id="email" placeholder="Enter your email">
+            <p id="emailError" class="error"></p>
+
+            <!-- Phone -->
+            <label>Phone Number:</label>
+            <input type="text" id="phone" placeholder="Enter 10 digit phone number">
+            <p id="phoneError" class="error"></p>
+
+            <button type="submit">Submit</button>
+
+            <p id="successMessage" class="success"></p>
+
+        </form>
+
+    </div>
+
+
+    <script>
+
+        function validateForm() {
+
+            // Get values
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+
+            // Error elements
+            let emailError = document.getElementById("emailError");
+            let phoneError = document.getElementById("phoneError");
+            let successMessage = document.getElementById("successMessage");
+
+            // Clear previous messages
+            emailError.innerHTML = "";
+            phoneError.innerHTML = "";
+            successMessage.innerHTML = "";
+
+            let valid = true;
+
+            // Email validation
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === "") {
+                emailError.innerHTML = "Email is required";
+                valid = false;
+            }
+            else if (!emailPattern.test(email)) {
+                emailError.innerHTML = "Enter a valid email address";
+                valid = false;
+            }
+
+
+            // Phone number validation
+            let phonePattern = /^[0-9]{10}$/;
+
+            if (phone === "") {
+                phoneError.innerHTML = "Phone number is required";
+                valid = false;
+            }
+            else if (!phonePattern.test(phone)) {
+                phoneError.innerHTML = "Phone number must contain exactly 10 digits";
+                valid = false;
+            }
+
+
+            // If everything is valid
+            if (valid) {
+                successMessage.innerHTML = "Validation Successful!";
+                return false;
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+</html>
